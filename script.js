@@ -6,13 +6,13 @@ const newQuoteBtn = document.getElementById('new-quote');
 const loader = document.getElementById('loader');
 
 // Show loading
-function loading() {
+function loadingSpinner() {
     loader.hidden = false;
     quoteContainer.hidden = true;
 }
 
 // Hide loading
-function complete() {
+function completeSpinner() {
     if(!loader.hidden) {
         quoteContainer.hidden = false;
         loader.hidden = true;
@@ -23,7 +23,7 @@ function complete() {
 
 // Get Quote From API
 async function getQuote() {
-    loading();
+    loadingSpinner();
     const proxyUrl = 'https://whispering-tor-04671.herokuapp.com/'
     const apiUrl = 'http://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=json';
     try {
@@ -43,7 +43,7 @@ async function getQuote() {
         }
         quoteText.innerText = data.quoteText;
         // Stop Loader Show quote
-       complete();
+        completeSpinner();
     } catch (error) {
         getQuote();
     }
