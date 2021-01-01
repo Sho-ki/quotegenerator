@@ -51,11 +51,11 @@ async function getQuote() {
 
 //Twitter
 function tweetQuote() {
-    loading();
+    loadingSpinner();
     const quote = quoteText.innerText;
     const author = authorText.innerText;
     const twitterUrl = `https://twitter.com/intent/tweet?text=${quote} - ${author}`;
-    window.open(twitterUrl, '_black');
+    window.open(twitterUrl, '_blank');
 }
 //Event Listeners
 newQuoteBtn.addEventListener('click', getQuote);
