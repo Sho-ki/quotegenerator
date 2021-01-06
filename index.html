@@ -14,6 +14,7 @@
 <body>
     <div class="quote-container" id="quote-container">
         <!-- Quote -->
+    <div id="quoteWithAuthor">
         <div class="quote-text">
             <i class="fas fa-quote-left"></i>
             <span id="quote"></span>
@@ -22,11 +23,16 @@
         <div class="quote-author">
             <span id="author"></span>
         </div>
+    </div>
         <!-- Buttons -->
         <div class="button-container">
             <button class="twitter-button" id="twitter" title="Tweet This!">
-                <i class="fab fa-twitter"></i>
+                <i class="fab fa-twitter"></i> Tweet
             </button>
+            <button class="copy-button" id="copy" title="Copy This" onclick='copyFunction()'>
+                <i class="fas fa-copy"></i> Copy
+            </button>
+            <span id="copied">Copied</span>
             <button id="new-quote">New Quote</button>
         </div>
     </div>

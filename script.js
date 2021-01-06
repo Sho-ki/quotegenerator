@@ -64,3 +64,29 @@ twitterBtn.addEventListener('click', tweetQuote);
 
 // On Load
 getQuote();
+
+// Copy to Clipboard
+function copyFunction() {
+    if(authorText.innerText === 'Unknown') {
+        var text = document.getElementById('quote').innerText;
+        var elem = document.createElement("textarea");
+        document.body.appendChild(elem);
+        elem.value = text;
+        elem.select();
+        document.execCommand("copy");
+        document.body.removeChild(elem);
+    } else {
+        var text = document.getElementById('quoteWithAuthor').innerText;
+        var elem = document.createElement("textarea");
+        document.body.appendChild(elem);
+        elem.value = text;
+        elem.select();
+        document.execCommand("copy");
+        document.body.removeChild(elem);
+    }
+        const a = document.getElementById('copied');
+        a.style.display= 'block';
+    setTimeout(function(){
+        a.style.display= 'none'
+    }, 2000)
+}
