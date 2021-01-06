@@ -51,7 +51,6 @@ async function getQuote() {
 
 //Twitter
 function tweetQuote() {
-    loadingSpinner();
     const quote = quoteText.innerText;
     const author = authorText.innerText;
     const twitterUrl = `https://twitter.com/intent/tweet?text=${quote} - ${author}`;
@@ -85,7 +84,7 @@ function copyFunction() {
         document.body.removeChild(elem);
     }
         const a = document.getElementById('copied');
-        a.style.display= 'block';
+        a.style.display= 'inline';
     setTimeout(function(){
         a.style.display= 'none'
     }, 2000)

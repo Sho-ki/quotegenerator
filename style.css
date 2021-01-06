@@ -47,9 +47,21 @@ body {
 }
 
 .button-container {
+    display:inline-block;
+    overflow: auto;
+    white-space: nowrap; 
+    margin:0px auto;
+    width: 100%;
+    padding-bottom: 10px;
+}
+
+.button-container1 {
     margin-top: 15px;
-    display: flex;
-    /* justify-content: space-between; */
+    float: left;
+}
+.button-container2 {
+    margin-top: 15px;
+    float: right
 }
 
 button {
@@ -88,6 +100,7 @@ button:active{
 
 .copy-button {
     margin-left: 1rem;
+    margin-right: 3px;
 }
 
 .copy-button:hover {
@@ -100,8 +113,9 @@ button:active{
 }
 
 #copied {
+    /* display: none; */
     display: none;
-    margin-left: 10px;
+    position: absolute;
 }
 
 /* loader */
@@ -127,6 +141,19 @@ button:active{
 
     .quote-text {
         font-size: 2.5rem
+    } 
+}
+
+@media screen and (max-width: 528px){
+    .button-container1 {
+        float: none;
     }
-    
+    .button-container2{
+        width: 100%;
+    }
+    #new-quote {
+        display: block;
+        margin: 0;
+        width: 100%;
+    }
 }
